@@ -1,0 +1,445 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: .3s;
+    color: white;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  :root{
+  /* Primary */
+  /* (intro and email sign up background) */
+  --Dark-Blue-1: hsl(217, 28%, 15%);
+  /* (main background) */
+  --Dark-Blue-2: hsl(218, 28%, 13%);
+  /* (footer background) */
+  --Dark-Blue-3: hsl(216, 53%, 9%);
+  /* (testimonials background) */
+  --Dark-Blue-4: hsl(219, 30%, 18%);
+
+  /* Accent */
+  /* (inside call-to-action gradient) */
+  --Cyan: hsl(176, 68%, 64%);
+  /* (inside call-to-action gradient) */
+  --Blue: hsl(198, 60%, 50%);
+  --linear-gradient: linear-gradient(#65e2d9, #339ecc);
+  /* (error) */
+  --Light-Red: hsl(0, 100%, 63%);
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  }
+  .attribution { 
+    font-size: 14px; 
+    text-align: center;
+    padding: 12px;
+    background-color: var(--Dark-Blue-3);
+  }
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
+p{
+    font-size: 14px;
+}
+h1, h2, h3, .link, .btn{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+.header{
+  background-color: var(--Dark-Blue-1);
+}
+.about{
+
+  background-color: var(--Dark-Blue-1);
+}
+.products, .stay, .testimonials{
+  background-color: var(--Dark-Blue-2);
+}
+.footer{
+  background-color: var(--Dark-Blue-3);
+  padding: 150px 120px 80px 150px;
+}
+.form-cont{
+  background-color: var(--Dark-Blue-1);
+}
+.test{
+  background-color: var(--Dark-Blue-4);
+}
+.btn{
+  border: none;
+  outline-color: transparent;
+  padding: 12px 40px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #65e2d9, #339ecc);
+  font-size: 14px;
+  font-weight: 700;
+  width: max-content;
+}
+.btn:hover{
+  background: linear-gradient(90deg, #7bf2ea, #61bee6);
+}
+.heading{
+  font-size: 40px;
+  font-weight: 700;
+  width: 50vw;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.sub-header{
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+.label{
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+}
+.link{
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--White);
+  margin-left: 32px;
+}
+.link:hover{
+  border-bottom: 2px solid white;
+}
+.hero-image{
+  margin: 0 auto;
+}
+.about{
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 60px;
+  align-items: center;
+  background-image: url(images/bg-curvy-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.curvy{
+  display: none;
+}
+.about .phar{
+  width: 40vw;
+  margin-bottom: 24px;
+}
+.products{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8vw;
+  padding: 0 250px;
+  text-align: center;
+}
+.prod-image{
+  margin: 24px auto;
+}
+.stay{
+  display: flex;
+  align-items: center;
+  padding: 50px 120px;
+  gap: 3vw;
+  text-align: left;
+}
+.left{
+  width: 50%;
+}
+.right{
+  width: 50%;
+}
+.right .phar{
+  margin-bottom: 18px;
+}
+.stay-link{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--Cyan);
+  text-decoration: none;
+  border-bottom: 2px solid var(--Cyan);
+  width: max-content;
+}
+.stay-link:hover{
+  border-bottom: 2px solid white;
+color: white;
+}
+.testimonials{
+  padding: 50px 120px;
+}
+.profile{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.profile-img{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.name{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.small{
+  font-size: 12px;
+}
+.flex{
+  position: relative;
+  display: flex;
+  gap: 3vw;
+}
+.test{
+  border-radius: 4px;
+  padding: 32px 24px 24px 24px;
+}
+.test-1{
+  position: relative;
+  z-index: 2;
+}
+.quotes{
+  position: absolute;
+  top: -35px;
+  left: -10px;
+  z-index: 1;
+}
+.form-cont{
+  position: relative;
+  bottom: -150px;
+  width: 800px;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 32px 0 24px 0;
+  text-align: center;
+}
+.form-cont .sub-header{
+  font-size: 24px;
+}
+.form-cont .phar{
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+.input{
+  border: none;
+  outline-color: transparent;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  margin-right: 12px;
+  width: 50%;
+  color: var(--Dark-Blue-4);
+}
+.error-cont{
+  padding-left: 15%;
+}
+.footer-body{
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
+  padding-top: 32px;
+  gap: 3vw;
+}
+.footer-link{
+  display: block;
+  width: max-content;
+}
+i{
+  margin-right: 6px;
+  padding: 4px 6px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+i:hover{
+  color: var(--Cyan);
+  border: 1px solid var(--Cyan);
+}
+.footer-body .phar{
+  display: flex;
+  align-items: start;
+}
+.footer-body .footer-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+.footer-link:hover{
+  border-bottom: 2px solid white;
+}
+.link-image{
+  margin-right: 16px;
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (width < 1200px)  {}
+
+/* Large devices (desktops, 992px and up) */
+@media (width < 992px) {
+  p{
+    font-size: 12px;
+  }
+  .stay-link{
+    font-size: 12px;
+    padding-bottom: 4px;
+  }
+  .name{
+    font-size: 12px;
+  }
+  .small{
+    font-size: 10px;
+  }
+  .header{
+    padding: 6vw 8vw 80px 8vw;
+  }
+  .sub-header{
+    font-size: 18px;
+  }
+  .nav{
+    padding: 0 0 40px 0;
+  }
+  .logo{
+    height: 20px;
+  }
+  .link{
+    margin-left: 12px;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .heading{
+    width: 100%;
+    font-size: 24px;
+    z-index: 10;
+  }
+  .label{
+    font-size: 18px;
+  }
+  .about .phar{
+    width: 100%;
+  }
+  .about .btn{
+    width: 80%;
+  }
+  .about{
+    position: relative;
+    padding: 240px 8vw 80px 8vw;
+    background-image: linear-gradient(hsl(217, 27%, 15%) 50%, hsl(217, 27%, 13%) 50%);
+  }
+  .curvy{
+    display: block;
+    position: absolute;
+    top: 160px;
+  }
+  .hero-image{
+    position: absolute;
+    z-index: 20;
+  }
+  .products{
+    padding: 0 8vw 120px 8vw;
+    grid-template-columns: 1fr;
+  }
+  .prod-image{
+    width: 70px;
+  }
+  .item{
+    margin-bottom: 40px;
+  }
+  .stay{
+    padding: 0 8vw 160px 8vw;
+    flex-direction: column;
+  }
+  .left{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .right{
+    width: 100%;
+  }
+  .testimonials{
+    padding: 0 10vw 80px 10vw;
+  }
+  .flex{
+    flex-direction: column;
+  }
+  .form-cont{
+    width: 100%;
+    padding: 24px;
+  }
+  .footer{
+    padding: 80px 8vw 80px 8vw;
+  }
+  .footer-body{
+    grid-template-columns: 1fr;
+  }
+  .input{
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .btn{
+    width: 100%;
+  }
+  .quotes{
+    width: 28px;
+    top: -20px;
+    left: 5px;
+  }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (width < 768px) {}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width < 576px) {}
